@@ -53,23 +53,84 @@ public class POE1 {
              System.out.println("Please re enter your cellphone number");    
             cellphone=scanner.nextLine();
         }
-         System.out.println("Cellphone number is valid!");       
+         System.out.println("Cellphone number is valid!"); 
+         
+        answer=scanner.nextLine();
+        String password="";
+        int lpen=password.length();
+        Boolean hasUP=false;
+        Boolean hasLow=false;
+        Boolean hasSpecial=false;
+        Boolean hasNum=false;
+        Character ch;
+
+        
+        
+         System.out.println("PLEASE CREATE YOUR PASSWORD BELOW");
+         password=scanner.nextLine();
+         while (password.isBlank()) {            
+             System.out.println("Please fill in your password*");
+             password=scanner.nextLine();
+             
+        }
+         
+         while (lpen<8) {            
+             System.out.println("Password should atleast be 8 chracters in length*"); 
+             password=scanner.nextLine();
+             
+        }
+         for (int i = 0; i < password.length(); i++) {
+          ch = password.charAt(i);
+          
+         if(Character.isUpperCase(ch)){
+             hasUP=true;
+         }
+         if(Character.isDigit(ch)){
+         hasNum=true;
+         }
+          
+          
+           }
+         while (!hasNum||!hasUP) {
+             System.out.println("Password format is invalid");
+    System.out.println("Password should have at least one uppercase letter and one number!");
+
+    password=scanner.nextLine();
+            
+        }
+         for (int i = 0; i < password.length(); i++) {
+          ch = password.charAt(i);
+          
+         if(Character.isUpperCase(ch)){
+             hasUP=true;
+         }
+         if(Character.isDigit(ch)){
+         hasNum=true;
+         }
+          
+          
+           }
+         System.out.println("Password is valid!");
+         System.out.println("ACCOUNT CREATED WELCOME TO WAZE");
+         
+         
+        
         
         
  
        
             
-  String password=scanner.nextLine();
+  
   int whilecount=0;
-        System.out.println("PLEASE CREATE YOUR PASSWORD BELOW");
+       
 
-        while(password.isBlank()){
+       /* while(password.isBlank()){
             System.out.println("Password field is empty");
             System.out.println("Please kindly fill in your password😂");
             password=scanner.nextLine();
             whilecount++;
         }
-          //ss
+        
    int plen=password.length();
         System.out.println(plen);
    while(plen<8){
@@ -79,7 +140,8 @@ public class POE1 {
       
         plen = password.length(); 
        
-   }     
+   } 
+   
         System.out.println("Password is valid"); ////
        /* Character ch;
      
