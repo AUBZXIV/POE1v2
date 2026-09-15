@@ -77,6 +77,7 @@ public class POE1 {
          while (lpen<8) {            
              System.out.println("Password should atleast be 8 chracters in length*"); 
              password=scanner.nextLine();
+             lpen = password.length();
              
         }
          for (int i = 0; i < password.length(); i++) {
@@ -96,6 +97,8 @@ public class POE1 {
     System.out.println("Password should have at least one uppercase letter and one number!");
 
     password=scanner.nextLine();
+    hasNum=false;
+    hasUP=false;
             
         }
          for (int i = 0; i < password.length(); i++) {

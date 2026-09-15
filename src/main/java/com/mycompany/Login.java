@@ -9,5 +9,21 @@ package com.mycompany;
  * @author USER
  */
 public class Login {
+ String username;
+ String password;
+ String cellphone;
     
+}
+public Boolean checkUsername(){
+
+}
+public Boolean checkPasswordComplexity9(){
+
+}
+public String registerUser(){
+
+}
+public Boolean loginUser(){
+}
+public String returnLoginstatus(){
 }
