@@ -69,7 +69,7 @@ public class POE1 {
             password=scanner.nextLine();
             whilecount++;
         }
-          
+          //ss
    int plen=password.length();
         System.out.println(plen);
    while(plen<8){
