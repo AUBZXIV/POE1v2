@@ -4,29 +4,51 @@
  */
 package com.mycompany;
 
-
 /**
  *
  * @author USER
  */
 public class Login {
- String username;
+   String username;
  String password;
  String cellphone;
     
+  public Login(String username,String password,String cellphone){
+  this.username=username;
+  this.cellphone=cellphone;
+  this.password=password;
+  
+  }
+  public Boolean checkUsername(){
+
+         return username.contains("_") && username.length() <5;
 }
+ Boolean checkCellphone(){
+ 
+     return cellphone.length()<=12&&cellphone.startsWith("+27");
+ 
+ }
+    public static void ValidatePassword(String[] args) {
+      
+        
+        
+        
+    }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+}
+
 /*
-public Boolean checkUsername(){
 
-}
-public Boolean checkPasswordComplexity9(){
-
-}
-public String registerUser(){
-
-}
-public Boolean loginUser(){
-}
-public String returnLoginstatus(){
-}
 */
