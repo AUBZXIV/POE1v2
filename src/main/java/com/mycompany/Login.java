@@ -4,6 +4,7 @@
  */
 package com.mycompany;
 
+
 /**
  *
  * @author USER
@@ -14,6 +15,7 @@ public class Login {
  String cellphone;
     
 }
+/*
 public Boolean checkUsername(){
 
 }
@@ -27,3 +29,4 @@ public Boolean loginUser(){
 }
 public String returnLoginstatus(){
 }
+*/
