@@ -23,27 +23,91 @@ public class LoginTest {
     @Test
     public void testCheckUsernameValid() {
           Login login = new Login("Au_bz", "@A2wweopttr","+27728638163");
-    String username = "kyl_1";
-
-    assertEquals  ("Username successfully captured.", login.checkUsername(username));
+          String exp="WELCOME TO WAVE";
+        assertTrue(login.checkUsername());
+        
     }
+    @Test
+    public void testinvalidusername() {
+          Login login = new Login("Aubreyz", "@A2wweopttr","+27728638163");
+          String exp="Username is invalid, the username should contain and underscore  and be no more than 5 characters";
+        assertFalse(login.checkUsername());
+        
+    }
+    @Test
+    public void testValidcellphone() {
+          Login login = new Login("Aubrey", "@A2wweopttr","+27728638163");
+          String exp="Cellphone is valid";
+          assertTrue(login.checkCellphone());
+        
+    }
+    @Test
+    public void testINValidcellphone() {
+          Login login = new Login("Aubrey", "@A2wweopttr","0728638163");
+          String exp="Cellphone is invalid, cellphone should start with country code";
+          
+          assertFalse(login.checkCellphone());
+        
+    }
+     @Test
+    public void testvalidPassword() {
+          Login login = new Login("Aubrey", "@A2wweopttr","0728638163");
+          String exp="password is valid";
+          assertEquals(exp,login.checkPasswordcomplexity());
+          
+          
+          assertTrue(login.checkPasswordcomplexity(),"Password is valid");
+        
+    }
+     public void testinvalidPassword() {
+          Login login = new Login("Aubrey", "qa211w","0728638163");
+          String exp="Password is invalid"
+                  + "password should be atleast 8 characters"
+                  + "password should contain atleast one special character"
+                  + "password should contain atleast one upper case letter"
+                  + "password should atleast have a digit";
+         assertEquals(exp,login.checkPasswordcomplexity());
+                  
+                  assertFalse(login.checkPasswordcomplexity());
+         }
+       
+   
+     
+     
+     
     
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+}
+    //assertEquals  ("Username successfully captured.", login.checkUsername(username));
+    
+  /*  
  @Test
   public void testUsernameIncorrectlyFormatted() {
+      
 
         String username = "kyle!!!!!!";
 
-        assertEquals("Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.",checkUsername(username));
+        //assertEquals("Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.",checkUsername(username));
     }
   @Test
     public void testPasswordCorrectlyFormatted() {
 
         String password = "Ch&sec@ke99!";
+      //assertEquals(password,lo);
 
-        assertEquals(
-            "Password successfully captured.",
-            checkPassword(password)
-        );
     }
 
     @Test
@@ -111,3 +175,4 @@ public class LoginTest {
     
     
     
+*/
