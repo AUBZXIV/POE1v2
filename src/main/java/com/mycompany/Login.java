@@ -10,9 +10,14 @@ import java.util.Scanner;
  * @author USER
  */
 public class Login {
-   String username;
- String password;
- String cellphone;
+    Scanner scanner=new Scanner(System.in);
+   String username=scanner.nextLine();
+ String password=scanner.nextLine();
+ String cellphone=scanner.nextLine();
+ String regUser=scanner.nextLine();
+ String regCell=scanner.nextLine();
+ String regPassword=scanner.nextLine();
+    
     
   public Login(String username,String password,String cellphone){
   this.username=username;
@@ -86,8 +91,53 @@ public class Login {
 }
         
 return (hasUP&&hasNum&&hasSpecial);
+
        
    }
+public String registerUser(){
+    
+    if (!checkUsername()) {
+        return"Username should contain an underscore and must be no longer than 5 characters";
+    }
+    if (!checkPasswordcomplexity()) {
+        return "Password should have atleast have an Uppercase letter+/n+"
+                + "Password should atleast have on digit+/n+"
+                + "Password should be 8 characters long+/n+"
+                + "Password should contain atleast one Character";
+        
+    }
+    return"The conditions have been met,Account has been registered successfully";
+} 
+public String checkCell(){
+
+    if (!checkCellphone()) {
+      return"Cellphone number should not be more than 10 digits and should begin with country code  ";
+    }
+    return "Cellphone number is invalid";
+}
+public Boolean loginUser(){
+    if (username.equals(regUser)&&cellphone.equals(regCell)&&password.equals(regPassword)) {
+        
+     return true;
+        
+    }else{
+    
+    return false;
+    }
+    
+    
+}
+ public String returnLoginStatus(){
+     if (loginUser()) {
+         return "Login has been successful";
+     }else{
+     
+     return"Login is unsuccessful";
+     }
+     
+     
+ 
+ }
  
  
  
