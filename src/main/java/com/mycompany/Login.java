@@ -19,7 +19,8 @@ public class Login {
  String regPassword=scanner.nextLine();
     
     
-  public Login(String username,String password,String cellphone){
+  
+public Login(String username,String password,String cellphone){
   this.username=username;
   this.cellphone=cellphone;
   this.password=password;
@@ -27,9 +28,10 @@ public class Login {
   }
   public Boolean checkUsername(){
 
-         return username.contains("_") && username.length() <5;
+         return username.contains("_") && username.length() <=5;
+         
 }
- Boolean checkCellphone(){
+ public Boolean checkCellphone(){
  
      return cellphone.length()<=12&&cellphone.startsWith("+27");
  
@@ -138,6 +140,10 @@ public Boolean loginUser(){
      
  
  }
+
+    public Object checkUsername(String username) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
  
  
  
